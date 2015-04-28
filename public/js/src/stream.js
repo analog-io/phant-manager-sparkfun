@@ -106,7 +106,7 @@
   stream.startMQTT = function(el) {
 
     var secure = /https/.test(window.location.protocol),
-        client = mows.createClient((secure ? 'wss' : 'ws') + '://' + window.location.host),
+        client = mows.createClient('ws://' + window.location.host+':8000'),
         body = el.find('table tbody');
 
     client.subscribe('output/' + el.data('key'));
